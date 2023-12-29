@@ -104,7 +104,7 @@ h1{
 
     /* style for contact display page  */
 
-    .card-container {
+    #card-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;

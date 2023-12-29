@@ -54,9 +54,17 @@ app.get('/', (req, res) => {
 app.get('/upload', (req, res) => {
     res.render("upload.hbs");
 });
-app.get('/contact', (req, res) => {
-  res.render("contact.hbs");
+
+app.get('/booking', (req, res) => {
+  res.render("booking.hbs");
 });
+
+
+app.get('/product', (req, res) => {
+  res.render("product.hbs");
+});
+
+
 app.get('/contact/api', async(req, res) => {
   try{
     const findData = await Upload.find();
