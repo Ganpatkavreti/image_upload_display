@@ -15,24 +15,22 @@ function displayProducts(products) {
   const productList = document.getElementById('card-container');
 
   products.forEach(product => {
-//     const listItem = document.createElement('li');
-//     listItem.textContent = `${product._id}. ${product.productName} - $${product.productPrice
-// }`;
 
-var cardDiv = document.createElement('div');
-cardDiv.className = 'card';
 
-  
-  var imgElement = document.createElement('img');
-  imgElement.src = product.productImage; 
+    var cardDiv = document.createElement('div');
+    cardDiv.className = 'card';
 
-  var h1Element = document.createElement('h1');
-  h1Element.innerHTML = product.productName; 
 
-  var pElement = document.createElement('p');
-  pElement.innerHTML = product.productDescription; 
+    var imgElement = document.createElement('img');
+    imgElement.src = product.productImage;
 
- // Create a button for each product
+    var h1Element = document.createElement('h1');
+    h1Element.innerHTML = product.productName;
+
+    var pElement = document.createElement('p');
+    pElement.innerHTML = product.productDescription;
+
+    // Create a button for each product
     const addButton = document.createElement('button');
     addButton.textContent = 'Add to Cart';
     addButton.addEventListener('click', () => addToCart(`${product.productName} - $${product.productPrice}`));
@@ -43,14 +41,14 @@ cardDiv.className = 'card';
     cardDiv.appendChild(addButton);
     productList.appendChild(cardDiv);
 
-  
+
   });
 }
 
 
-function addToCart(name,price) {
-  const cartItem = {name, price};
- 
+function addToCart(name, price) {
+  const cartItem = { name, price };
+
   const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
   cartItems.push(cartItem);
   localStorage.setItem("cart", JSON.stringify(cartItems));

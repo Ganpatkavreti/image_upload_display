@@ -32,6 +32,9 @@ const upload = multer({ storage:storage });
 // set static path----------------------------------------------
 app.use(express.static(staticPath));
 app.use(express.json());
+app.use(express.urlencoded({extended: false}));
+
+
 
 // set view ingin _________________________________________________
 
